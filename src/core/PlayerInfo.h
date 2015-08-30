@@ -19,18 +19,41 @@ class PlayerInfo
 {
 	public:
 		PlayerInfo();
-		PlayerInfo(std::string name, int age);
+		PlayerInfo(std::string firstName, std::string lastName, int age);
 		PlayerInfo(const PlayerInfo& rhs);
 		virtual ~PlayerInfo();
 
 		PlayerInfo& operator=(const PlayerInfo& rhs);
 
+		void setFirstName(std::string firstName);
+		void setLastName(std::string lastName);
+		void setName(std::string firstName, std::string lastName);
+
+		std::string getName(bool fullName = true);
+		std::string getFirstName();
+		std::string getLastName();
+
+		void setAge(int age);
+		int getAge();
+
 		Attribute& GetAttribute(int index);
+
+		enum Attributes
+		{
+			kSpeed,
+			kJumping,
+			kShot,
+			kControll,
+			kOverview,
+			kStrength,
+			kStamina
+		};
 
 	protected:
 		void Initialize();
 
-		std::string fName;
+		std::string fFirstName;
+		std::string fLastName;
 		int fAge;
 
 		std::vector<Attribute> fAttributes;
