@@ -1,5 +1,5 @@
 /*!
- * @class fm::PlayerInfo
+ * @class fm::core::PlayerInfo
  *
  * @date 20.07.2015
  * @author Achim Gütlein
@@ -14,6 +14,8 @@
 #include "Attribute.h"
 
 namespace fm {
+
+namespace core {
 
 class PlayerInfo
 {
@@ -58,6 +60,8 @@ class PlayerInfo
 
 		std::vector<Attribute> fAttributes;
 };
+
+} /* namespace core */
 
 } /* namespace fm */
 #endif /* FM_PLAYERINFO_H_ */

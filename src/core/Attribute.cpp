@@ -2,6 +2,8 @@
 
 namespace fm {
 
+namespace core {
+
 Attribute::Attribute()
 	: fName(),
 	  fValue(0.)
@@ -59,5 +61,7 @@ double Attribute::GetValue()
 {
 	return fValue;
 }
+
+} /* namespace core */
 
 } /* namespace fm */

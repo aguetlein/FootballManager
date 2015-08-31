@@ -12,6 +12,8 @@
 
 namespace fm {
 
+namespace core {
+
 PlayerInfo::PlayerInfo()
 	: fFirstName(),
 	  fLastName(),
@@ -30,7 +32,7 @@ PlayerInfo::PlayerInfo(std::string firstName, std::string lastName, int age)
 
 PlayerInfo::PlayerInfo(const PlayerInfo& rhs)
 	: fFirstName(rhs.fFirstName),
-	  fLastName(rhd.fLastName),
+	  fLastName(rhs.fLastName),
 	  fAge(rhs.fAge),
 	  fAttributes(rhs.fAttributes)
 {
@@ -128,5 +130,7 @@ void PlayerInfo::Initialize()
 	fAttributes.push_back(Attribute("Zweikampfstärke", 0.));
 	fAttributes.push_back(Attribute("Ausdauer", 0.));
 }
+
+} /* namespace core */
 
 } /* namespace fm */

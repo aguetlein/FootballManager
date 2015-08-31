@@ -1,5 +1,5 @@
 /*!
- * @class Attribute
+ * @class fm::core::Attribute
  *
  * @date 20.07.2015
  * @author Achim Gütlein
@@ -11,6 +11,8 @@
 #include <string>
 
 namespace fm {
+
+namespace core {
 
 class Attribute
 {
@@ -32,6 +34,8 @@ class Attribute
 		std::string fName;
 		double fValue;
 };
+
+} /* namespace core */
 
 } /* namespace fm */
 #endif /* FM_ATTRIBUTE_H_ */

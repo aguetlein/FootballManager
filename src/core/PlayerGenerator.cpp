@@ -10,6 +10,10 @@ PlayerGenerator::PlayerGenerator()
 PlayerInfo* PlayerGenerator::GeneratePlayer()
 {
 	PlayerInfo* player = new PlayerInfo;
+
+
+
+	return player;
 }
 
 PlayerGenerator::~PlayerGenerator()
