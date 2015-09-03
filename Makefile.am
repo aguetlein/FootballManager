@@ -9,6 +9,24 @@ MAINTAINERCLEANFILES = Makefile.in \
 
 CLEANFILES = *.d *.so *_rdict.* *_rdict_* *.rootmap
 
+# ========================================================
+# CORE LIB
+
+lib_LTLIBRARIES = libFMCore.la
+
+libFMCore_la_SOURCES = src/core/Attribute.cpp \
+	src/core/MatchEngine.cpp \
+	src/core/PlayerInfo.cpp \
+	src/core/Team.cpp
+
+libFMCore_la_headers = src/core/Attribute.h \
+	src/core/MatchEngine.h \
+	src/core/PlayerInfo.h \
+	src/core/Team.h
+
+pkginclude_HEADERS = $(libFMCore_la_headers)
+
 bin_PROGRAMS = FootballManager
 
 FootballManager_SOURCES = src/main.cpp
+FootballManager_LDADD = libFMCore.la
