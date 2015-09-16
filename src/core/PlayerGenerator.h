@@ -11,22 +11,33 @@
 #include <string>
 #include <vector>
 
+#include "Player.h"
+#include "RandomGenerator.h"
+
 namespace fm {
+
+namespace core {
 
 class PlayerGenerator
 {
 	public:
 		PlayerGenerator();
+		PlayerGenerator(RandomGenerator* rnd);
 		virtual ~PlayerGenerator();
 
-		PlayerInfo* GeneratePlayer();
+		Player* GeneratePlayer();
+
+		void SetRandomGenerator(RandomGenerator* rnd);
 
 	protected:
 		void Initialize();
 
 		std::vector<std::string> fFirstNames;
 		std::vector<std::string> fLastNames;
+
+		RandomGenerator* fRnd;
 };
 
+} /* namespace sore */
 } /* namespace fm */
 #endif /* FM_PLAYERGENERATOR_H_ */

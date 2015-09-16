@@ -20,7 +20,7 @@ int main()
 		std::cout << "   --------------------------------" << std::endl;
 		std::cout << "   |       FOOTBALL MANAGER       |" << std::endl;
 		std::cout << "   |                              |" << std::endl;
-		std::cout << "   | version " << VERSION << "              |" << std::endl;
+//		std::cout << "   | version " << VERSION << "              |" << std::endl;
 		std::cout << "   | (c) Achim Gütlein 2015       |" << std::endl;
 		std::cout << "   --------------------------------" << std::endl;
 

@@ -22,8 +22,6 @@ AC_CONFIG_HEADERS([config.h])
 
 AC_CONFIG_FILES([
 	Makefile
-	footballmanager.pc
-	footballmanager-config
 ])
 
 AC_OUTPUT

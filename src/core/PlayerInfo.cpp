@@ -1,10 +1,3 @@
-/*!
- * @class PlayerInfo
- *
- * @date 20.07.2015
- * @author Achim Gütlein
- */
-
 #include "PlayerInfo.h"
 
 #include <exception>
@@ -19,7 +12,7 @@ PlayerInfo::PlayerInfo()
 	  fLastName(),
 	  fAge(0)
 {
-	Initialize();
+
 }
 
 PlayerInfo::PlayerInfo(std::string firstName, std::string lastName, int age)
@@ -27,21 +20,20 @@ PlayerInfo::PlayerInfo(std::string firstName, std::string lastName, int age)
 	  fLastName(lastName),
 	  fAge(age)
 {
-	Initialize();
+
 }
 
 PlayerInfo::PlayerInfo(const PlayerInfo& rhs)
 	: fFirstName(rhs.fFirstName),
 	  fLastName(rhs.fLastName),
-	  fAge(rhs.fAge),
-	  fAttributes(rhs.fAttributes)
+	  fAge(rhs.fAge)
 {
 
 }
 
 PlayerInfo::~PlayerInfo()
 {
-	fAttributes.clear();
+
 }
 
 PlayerInfo& PlayerInfo::operator=(const PlayerInfo& rhs)
@@ -51,7 +43,6 @@ PlayerInfo& PlayerInfo::operator=(const PlayerInfo& rhs)
 		fFirstName = rhs.fFirstName;
 		fLastName = rhs.fLastName;
 		fAge = rhs.fAge;
-		fAttributes = rhs.fAttributes;
 	}
 
 	return *this;
@@ -106,29 +97,6 @@ void PlayerInfo::setAge(int age)
 int PlayerInfo::getAge()
 {
 	return fAge;
-}
-
-Attribute& PlayerInfo::GetAttribute(int index)
-{
-	if (index < 0 || index > (int) fAttributes.size())
-	{
-		throw std::invalid_argument("<PlayerInfo::GetAttribute> Invalid index");
-	}
-
-	return fAttributes[index];
-}
-
-void PlayerInfo::Initialize()
-{
-	fAttributes.clear();
-
-	fAttributes.push_back(Attribute("Geschwindigkeit", 0.));
-	fAttributes.push_back(Attribute("Sprungkraft", 0.));
-	fAttributes.push_back(Attribute("Schußkraft", 0.));
-	fAttributes.push_back(Attribute("Ballkontrolle", 0.));
-	fAttributes.push_back(Attribute("Übersicht", 0.));
-	fAttributes.push_back(Attribute("Zweikampfstärke", 0.));
-	fAttributes.push_back(Attribute("Ausdauer", 0.));
 }
 
 } /* namespace core */

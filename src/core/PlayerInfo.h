@@ -11,8 +11,6 @@
 #include <string>
 #include <vector>
 
-#include "Attribute.h"
-
 namespace fm {
 
 namespace core {
@@ -38,27 +36,10 @@ class PlayerInfo
 		void setAge(int age);
 		int getAge();
 
-		Attribute& GetAttribute(int index);
-
-		enum Attributes
-		{
-			kSpeed,
-			kJumping,
-			kShot,
-			kControll,
-			kOverview,
-			kStrength,
-			kStamina
-		};
-
 	protected:
-		void Initialize();
-
 		std::string fFirstName;
 		std::string fLastName;
 		int fAge;
-
-		std::vector<Attribute> fAttributes;
 };
 
 } /* namespace core */

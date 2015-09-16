@@ -2,14 +2,20 @@
 
 namespace fm {
 
+namespace core {
+
 PlayerGenerator::PlayerGenerator()
 {
 	Initialize();
 }
 
-PlayerInfo* PlayerGenerator::GeneratePlayer()
+Player* PlayerGenerator::GeneratePlayer()
 {
-	PlayerInfo* player = new PlayerInfo;
+	Player* player = new Player;
+
+	player->setFirstName(fFirstNames[fRnd->Uniform(0, fFirstNames.size())]);
+	player->setLastName(fLastNames[fRnd->Uniform(0, fLastNames.size())]);
+	player->setAge(fRnd->Uniform(17, 33));
 
 
 
@@ -45,5 +51,7 @@ void PlayerGenerator::Initialize()
 	fLastNames.push_back("Schulz");
 	fLastNames.push_back("Hoffmann");
 }
+
+} /* namespace core */
 
 } /* namespace fm */
